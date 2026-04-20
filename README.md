@@ -1,22 +1,35 @@
-# DRRT Loss Calculator
+# AI-Powered Securities Loss Recovery System
 
-A web application for calculating recognized losses from custodian confirmation data for securities litigation at DRRT.
+A web-based application that automates the calculation of recognized losses from financial transaction data for securities litigation and settlement claims.
 
-## Features
+This system processes client transaction datasets, applies rule-based logic, and generates structured financial summaries to support loss recovery analysis.
 
-- Upload Excel files containing transaction data
-- Automatic loss calculation based on purchase and sale prices
-- Support for different case types (Twitter, Kraft, etc.)
-- Download processed files with calculated losses
-- Web interface built with FastAPI and HTML/JS
+---
 
-## Tech Stack
+## 🚀 Features
 
-- **Backend**: Python, FastAPI
-- **Data Processing**: Pandas
-- **Frontend**: HTML, JavaScript
-- **Styling**: CSS
-- **Testing**: Pytest
+- Upload Excel files containing transaction data  
+- Automatic case detection (Twitter / Kraft settlements)  
+- Rule-based loss calculation with eligibility conditions  
+- Summary metrics:
+  - Total Recognized Loss  
+  - Total Investment  
+  - Total Sale  
+  - Eligible Records  
+- Download processed files with calculated results  
+- Clean web interface built with FastAPI and HTML/JS  
+
+---
+
+## 🛠 Tech Stack
+
+- Backend Python, FastAPI  
+- Data Processing: Pandas  
+- Frontend: HTML, JavaScript  
+- Styling: CSS  
+- Testing: Pytest  
+
+---
 
 ## Installation
 
@@ -69,16 +82,49 @@ drrt-loss-calculator/
 └── README.md
 ```
 
-## Loss Calculation
+---
 
-Recognized Loss = max(0, (Purchase Price - Sale Price) * Quantity)
+## 📊 Output Metrics
 
-- Only positive losses are recognized
-- If sale_price is missing, assumes no sale (loss = 0)
-- Quantity defaults to 1 if missing
+The system generates:
 
-## API Endpoints
+- Recognized Loss
+- Total Investment
+- Total Sale Value
+- Eligible Records Count
 
-- `GET /`: Home page
-- `POST /upload`: Upload and process file
-- `GET /download/{filename}`: Download processed file
+## 🧠 Loss Calculation Logic
+
+The system uses rule-based logic including:
+
+- Class period eligibility checks
+- Pre/Post disclosure handling
+- Capped loss scenarios
+- Handling of missing or incomplete data
+
+> Note: Actual settlement calculations may involve complex allocation tables. This implementation provides a simplified, extendable model for demonstration.
+
+---
+
+## 🔗 API Endpoints
+
+- `GET /` → Web UI
+- `POST /upload` → Upload and process file
+- `GET /download/{filename}` → Download result
+
+---
+
+## 💡 Key Highlights
+
+- Designed for financial data processing workflows
+- Handles both row-level and aggregated datasets
+- Modular architecture for extending new settlement cases
+- Focused on automation, accuracy, and usability
+
+---
+
+## 📌 Future Improvements
+
+- Integration with real settlement allocation tables
+- Advanced validation and reporting
+- Enhanced UI with data preview
