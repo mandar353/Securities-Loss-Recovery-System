@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DRRT Loss Calculator</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/js/script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>DRRT Loss Calculator</h1>
+    <p class="subtitle">Upload client transaction data to calculate recognized losses</p>
+
+    <div class="card">
+        <h3>Upload Transaction Data</h3>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            
+            <label>Upload Excel File:</label>
+            <input type="file" name="file" accept=".xlsx,.xls" required>
+
+            <button type="submit">Process File</button>
+        </form>
+    </div>
+
+    <div id="result" class="card hidden"></div>
+
+</div>
+
+</body>
+</html>
