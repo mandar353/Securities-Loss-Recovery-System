@@ -36,12 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         Download Processed File
                     </a>
                 `;
+                document.getElementById('result').classList.remove('hidden');
             } else {
                 document.getElementById('result').innerHTML = `<p style="color:red;">${result.detail}</p>`;
+                document.getElementById('result').classList.remove('hidden');
             }
 
         } catch (error) {
             document.getElementById('result').innerHTML = `<p style="color:red;">${error.message}</p>`;
+            document.getElementById('result').classList.remove('hidden');
         }
     });
 });
